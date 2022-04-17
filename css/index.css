@@ -6,12 +6,74 @@
   --navy: #17050f;
   --blue: #082840;
   --white: #fff;
+  --primary: #dbebc0;
+}
+
+@font-face {
+  font-family: "Parkly";
+  src: url("/css/fonts/Parkly-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Parkly Wide";
+  src: url("/css/fonts/Parkly-Wide.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Parkly Condensed";
+  src: url("/css/fonts/Parkly-Condensed.woff2") format("woff2");
+}
+
+/* Josh's reset */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
 }
 
 /* Global stylesheet */
-* {
-  box-sizing: border-box;
-}
 
 html,
 body {
@@ -19,7 +81,7 @@ body {
   margin: 0;
   font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
-  background-color: lightcoral;
+  background-color: var(--primary);
 }
 p:last-child {
   margin-bottom: 0;
@@ -94,11 +156,9 @@ code {
 
 /* Header */
 .home {
-  padding: 0 1rem;
-  float: left;
-  margin: 1rem 0; /* 16px /16 */
-  font-size: 1em; /* 16px /16 */
+  color: yellow;
 }
+
 .home :link:not(:hover) {
   text-decoration: none;
 }
@@ -134,13 +194,7 @@ code {
   counter-increment: start-from -1;
   line-height: 1.8;
 }
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
-}
+
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
@@ -150,8 +204,6 @@ code {
   word-spacing: -0.5px;
 }
 .postlist-link {
-  padding-left: 0.25em;
-  padding-right: 0.25em;
   text-underline-position: from-font;
   text-underline-offset: 0;
   text-decoration-thickness: 1px;
@@ -218,4 +270,120 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+/* Added CSS */
+
+.home {
+  padding: 2% 8%;
+}
+
+.wrapper {
+  padding: 0 8%;
+  margin-top: 38px;
+}
+
+.postlist-item {
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.description {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-family: "Parkly Wide";
+}
+
+h2,
+h3,
+h4 {
+  font-family: "Parkly Condensed";
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+}
+
+/* Individual posts */
+
+.post h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8rem;
+}
+
+.post .post-tag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+}
+
+.post-content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+  padding-left: 40px;
+}
+
+.post-content h2,
+h3,
+h4,
+h5 {
+  margin: 30px 0 10px 0;
+  font-size: 2rem;
+}
+
+.post hr {
+  margin: 40px 0 20px 0;
+  color: rgb(0, 0, 0, 18%);
+}
+
+.post-time {
+  text-align: center;
+  display: block;
+  color: rgb(0, 0, 0, 18%);
+  margin-bottom: 40px;
+  padding-top: 80px;
+}
+
+.cactus {
+  height: 180px;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.img-top-right {
+  height: 180px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-bottom: 50px;
+  margin-right: 5%;
+}
+
+.post-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+}
+
+.post-footer img {
+  height: 80px;
+  float: left;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40vw;
 }
