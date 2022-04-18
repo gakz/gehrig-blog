@@ -2,11 +2,12 @@
 :root {
   --lightgray: #e0e0e0;
   --gray: #c0c0c0;
-  --darkgray: #333;
+  --darkgray: #201e1f;
   --navy: #17050f;
   --blue: #082840;
   --white: #fff;
-  --primary: #dbebc0;
+  --primary: #f5ffe4;
+  --accent: #ab87ff;
 }
 
 @font-face {
@@ -22,6 +23,16 @@
 @font-face {
   font-family: "Parkly Condensed";
   src: url("/css/fonts/Parkly-Condensed.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/css/fonts/Manrope-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope Bold";
+  src: url("/css/fonts/Manrope-Bold.ttf") format("truetype");
 }
 
 /* Josh's reset */
@@ -107,9 +118,7 @@ main {
 main :first-child {
   margin-top: 0;
 }
-header {
-  border-bottom: 1px dashed var(--lightgray);
-}
+
 header:after {
   content: "";
   display: table;
@@ -227,8 +236,8 @@ code {
   margin-left: 0.6666666666667em; /* 8px /12 */
   margin-top: 0.5em; /* 6px /12 */
   margin-bottom: 0.5em; /* 6px /12 */
-  color: var(--darkgray);
-  border: 1px solid var(--gray);
+  color: var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 0.25em; /* 3px /12 */
   text-decoration: none;
   line-height: 1.8;
@@ -239,10 +248,14 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  background-color: var(--lightgray);
+  background-color: var(--accent);
 }
 .postlist-item > .post-tag {
   align-self: center;
+}
+
+.post-tag a {
+  color: var(--accent);
 }
 
 /* Warning */
@@ -269,7 +282,7 @@ a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
-  color: #aaa;
+  color: #50b2c0;
 }
 
 /* Added CSS */
@@ -369,16 +382,18 @@ h5 {
 
 .post-footer {
   text-align: center;
-  font-size: 0.8rem;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 70px;
 }
 
-.post-footer img {
-  height: 80px;
+.post-footer img,
+.post-footer h4 {
+  height: 60px;
   float: left;
+  font-size: 1.4rem;
+  margin-left: 24px;
 }
 
 .center-img {
@@ -386,4 +401,26 @@ h5 {
   margin-left: auto;
   margin-right: auto;
   max-width: 40vw;
+}
+
+.center {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .cactus {
+    height: 180px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title {
+    width: fit-content;
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-family: "Manrope", sans-serif;
 }

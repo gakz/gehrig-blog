@@ -2,16 +2,16 @@
   "title": "Gehrig",
   "url": "https://gehrig.co/",
   "language": "en",
-  "description": "Gehrig Kunz' blog",
+  "description": "Writing about learnings by @GehrigKunz",
   "feed": {
     "subtitle": "Writing about learnings.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://gehrig.co/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://gehrig.co/feed/feed.json"
   },
   "author": {
     "name": "Gehrig Kunz",
